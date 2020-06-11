@@ -6,10 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloudalibabaconfignacosclient8000" />
-        <module name="cloudalibabaConsumer9001" />
-        <module name="cloudalibabaProduct9101" />
         <module name="cloudalibabaProduct9102" />
+        <module name="cloudalibabaProduct9101" />
+        <module name="cloudalibaba-Product-9102" />
+        <module name="cloudalibaba-Product-9101" />
+        <module name="cloudalibaba-Product-jiqun-noNginx" />
+        <module name="cloudalibaba-Consumer-9001" />
+        <module name="cloudalibabaConsumer9001" />
+        <module name="cloudalibaba-Product-jiqun" />
+        <module name="cloudalibaba-Sentinel-Server-8500" />
+        <module name="cloudalibaba-config-nacos-client8000" />
+        <module name="cloudalibabaconfignacosclient8000" />
       </profile>
     </annotationProcessing>
   </component>

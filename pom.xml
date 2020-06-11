@@ -12,6 +12,9 @@
         <module>cloudalibaba-Product-9102</module>
         <module>cloudalibaba-Product-9101</module>
         <module>cloudalibaba-config-nacos-client8000</module>
+        <module>cloudalibaba-Product-jiqun</module>
+        <module>cloudalibaba-Product-jiqun-noNginx</module>
+        <module>cloudalibaba-Sentinel-Server-8500</module>
     </modules>
     <name>SpringCloud-Alibaba-Demo</name>
     <packaging>pom</packaging>
@@ -23,13 +26,15 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
-        <log4j.version>1.2.17</log4j.version>
+        <log4j.version>1.7.25</log4j.version>
         <lombok.version>1.16.18</lombok.version>
         <druid.version>1.1.16</druid.version>
         <druid.spring.boot.starter.version>1.1.10</druid.spring.boot.starter.version>
         <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
-        <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
+        <!--sentinel 针对 链路的配置演示，需要使用到 2.1.1版本！-->
+        <spring.cloud.alibaba.version>2.1.1.RELEASE</spring.cloud.alibaba.version>
+<!--        <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>-->
     </properties>
     <!-- 子模块继承之后，提供作用：锁定版本 + 子module不用谢groupId和version -->
     <dependencyManagement>
@@ -62,6 +67,12 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <!--日志打印-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${log4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

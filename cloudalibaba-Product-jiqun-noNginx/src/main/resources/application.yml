@@ -1,0 +1,17 @@
+## 该服务的端口信息
+server:
+  port: 9102
+
+## 服务别名和nacos服务注册发现地址配置
+spring:
+  application:
+    name: nacos-product
+  cloud:
+    nacos:
+      discovery:
+        #server-addr: localhost:8848
+        # 不使用nginx
+        server-addr: 192.168.99.100:3333,192.168.99.100:5555
+
+## 监控相关
+management.endpoints.web.exposure.include: '*'
