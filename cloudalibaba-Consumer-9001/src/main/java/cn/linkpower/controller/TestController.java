@@ -21,6 +21,6 @@ public class TestController {
         //拉取服务信息
         String reqUrl = "http://nacos-product/product/getProduct/"+id;
         String result = restTemplate.getForObject(reqUrl, String.class);
-        return result;
+        return "consumer get result --- >"+result;
     }
 }

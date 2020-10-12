@@ -11,6 +11,6 @@ spring:
       config:
         server-addr: localhost:8848 #Nacos作为配置中心地址
         file-extension: yaml #指定yaml格式配置
-        prefix: test-namespace  # 当不想使用 spring.application.name 作为文件名时，可以采取此项配置
-        group: TEST_GROUP   #配置nacos中的配置文件的分组
-        namespace: e361231d-5297-4846-b95e-3f2a4884680d  #自动生成的namespace值
+        #prefix: test-namespace  # 当不想使用 spring.application.name 作为文件名时，可以采取此项配置
+        #group: TEST_GROUP   #配置nacos中的配置文件的分组
+        #namespace: e361231d-5297-4846-b95e-3f2a4884680d  #自动生成的namespace值

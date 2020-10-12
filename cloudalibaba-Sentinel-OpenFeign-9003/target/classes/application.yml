@@ -1,0 +1,30 @@
+## 该服务的端口信息
+server:
+  port: 9003
+
+## 服务别名和nacos服务注册发现地址配置
+spring:
+  application:
+    name: cloudalibaba-sentiner-openfeign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #注册nacos
+    sentinel:
+      transport:
+        # sentinel dashboard的地址(sentinel的地址--8080监控当前8500微服务)
+        dashboard: localhost:8080
+        # 为应用开启额外的端口，上报监控信息
+        # 默认为8719端口，加入被占用将会自动从8719开始+1扫描，直至找到未被占用的端口地址
+        port: 8719
+      filter:
+        ## 关闭官方默认收敛所有context
+        enabled: false
+
+# 激活sentinel对openfeign的支持
+feign:
+  sentinel:
+    enabled: true
+## 监控相关
+management.endpoints.web.exposure.include: '*'
+

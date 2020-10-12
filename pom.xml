@@ -15,6 +15,7 @@
         <module>cloudalibaba-Product-jiqun</module>
         <module>cloudalibaba-Product-jiqun-noNginx</module>
         <module>cloudalibaba-Sentinel-Server-8500</module>
+        <module>cloudalibaba-Sentinel-OpenFeign-9003</module>
     </modules>
     <name>SpringCloud-Alibaba-Demo</name>
     <packaging>pom</packaging>

@@ -15,6 +15,7 @@
         <module name="cloudalibabaConsumer9001" />
         <module name="cloudalibaba-Product-jiqun" />
         <module name="cloudalibaba-Sentinel-Server-8500" />
+        <module name="cloudalibaba-Sentinel-OpenFeign-9003" />
         <module name="cloudalibaba-config-nacos-client8000" />
         <module name="cloudalibabaconfignacosclient8000" />
       </profile>
