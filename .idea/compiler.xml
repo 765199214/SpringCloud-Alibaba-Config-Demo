@@ -10,13 +10,13 @@
         <module name="cloudalibabaProduct9101" />
         <module name="cloudalibaba-Product-9102" />
         <module name="cloudalibaba-Product-9101" />
-        <module name="cloudalibaba-config-nacos-client8000" />
         <module name="cloudalibaba-Product-jiqun-noNginx" />
         <module name="cloudalibaba-Consumer-9001" />
         <module name="cloudalibabaConsumer9001" />
         <module name="cloudalibaba-Product-jiqun" />
-        <module name="cloudalibaba-Sentinel-OpenFeign-9003" />
         <module name="cloudalibaba-Sentinel-Server-8500" />
+        <module name="cloudalibaba-Sentinel-OpenFeign-9003" />
+        <module name="cloudalibaba-config-nacos-client8000" />
         <module name="cloudalibabaconfignacosclient8000" />
         <module name="cloudalibaba-sentinel-nacosCHIJIU-9100" />
       </profile>
