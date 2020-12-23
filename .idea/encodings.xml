@@ -15,6 +15,12 @@
     <file url="file://$PROJECT_DIR$/cloudalibaba-Product-jiqun-noNginx/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-Product-jiqun/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-Product-jiqun/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-Seata-account-9002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-Seata-account-9002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-Seata-order-9001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-Seata-order-9001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-Seata-storage-9003/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudalibaba-Seata-storage-9003/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-Sentinel-OpenFeign-9003/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-Sentinel-OpenFeign-9003/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudalibaba-Sentinel-Server-8500/src/main/java" charset="UTF-8" />

@@ -17,6 +17,10 @@
         <module>cloudalibaba-Sentinel-Server-8500</module>
         <module>cloudalibaba-Sentinel-OpenFeign-9003</module>
         <module>cloudalibaba-sentinel-nacosCHIJIU-9100</module>
+        <module>cloudalibaba-Seata-order-9001</module>
+        <module>cloudalibaba-Seata-account-9002</module>
+        <module>cloudalibaba-Seata-storage-9003</module>
+
     </modules>
     <name>SpringCloud-Alibaba-Demo</name>
     <packaging>pom</packaging>
