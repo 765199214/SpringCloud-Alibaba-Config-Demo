@@ -4,6 +4,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
+/**
+ * 结合 http://localhost:8001/getInfo2 测试<br/>
+ * @Component
+ * @RefreshScope
+ */
 @Component
 @RefreshScope
 public class TestVo2 {

@@ -3,6 +3,9 @@ package cn.linkpower.config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 测试类上无 @RefreshScope 修饰时，此时的数据是否能动态刷新
+ */
 //@Configuration
 public class BeanTest3 {
 

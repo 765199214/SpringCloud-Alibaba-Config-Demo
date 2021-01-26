@@ -3,6 +3,10 @@ package cn.linkpower.config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 用于测试nacos-config能否动态刷新bean中的属性值；<br/>
+ * 结合 http://localhost:8001/getInfo 测试
+ */
 //@Configuration
 //@RefreshScope
 public class BeanTest {

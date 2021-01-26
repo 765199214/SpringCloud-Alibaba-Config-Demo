@@ -7,6 +7,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 成功动态刷新bean配置；结合http://localhost:8001/getInfo测试
+ */
 @Configuration
 @RefreshScope
 public class BeanTest2 {
