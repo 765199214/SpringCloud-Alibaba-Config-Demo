@@ -1,0 +1,25 @@
+server:
+  port: 10000 # gateway的port
+
+spring:
+  application:
+    name: gateway-server # 应用服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册地址
+
+    gateway:
+      routes:
+        - id: nacos-product # 微服务别名称
+          uri: lb://nacos-product # lb://服务别名  根据服务名称从注册中心获取服务ip+port信息，lb:// 表示支持负载均衡
+          predicates:
+            - Path=/api-gateway/**
+          filters:
+            # RewritePath 将 /api-gateway 移除 ，    $\ 本来是$，但在yaml中必须使用$\
+            - RewritePath=/api-gateway(?<ss>/?.*),$\{ss}
+            # 增加请求参数 key = flag，value = 66666
+            - AddRequestParameter=flag, 66666
+
+            # http://localhost:10000/api-gateway/product/gateway/addRequestParam/2
+            # this is product services,addRequestParam,port:9101	id=2	flag=66666

@@ -1,0 +1,17 @@
+server:
+  port: 10000 # gateway的port
+
+spring:
+  application:
+    name: gateway-server # 应用服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册地址
+
+    gateway:
+      discovery:
+        locator:
+          # 是否与服务发现组件结合，通过serviceId转发到具体服务实例
+          enabled: true # 是否开启基于服务发现的路由规则
+          lowerCaseServiceId: true # 是否将服务名称小写

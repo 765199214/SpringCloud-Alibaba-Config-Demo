@@ -1,0 +1,35 @@
+server:
+  port: 10000 # gateway的port
+
+spring:
+  application:
+    name: gateway-server # 应用服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册地址
+
+    gateway:
+      routes:
+        - id: test-2
+          uri: http://www.baidu.com
+          predicates: # 断言
+            - Path=/testbd/**
+        # # 写死ip+port的形式
+        #- id: path_product # 唯一id，名称可以随意定义，但必须保证唯一
+        #  uri: http://localhost:9101 # 目标URI，路由到微服务的地址
+        #  predicates: # 断言
+        #    - Path=/product/** #path规则，匹配对应的URL请求，将匹配到的请求追加至目标URI之后
+        #    #- Query=token # 匹配请求中包含token才进行路由(token值是多少则无所谓)
+        #    #- Query=token,abc. # 匹配请求中包含token(token值是多少则无所谓)，且必须满足 abc. (.表示任意字符)，此时才能满足路由。但只能时adc1占用一位，没有其他字符或者多个其他字符则失败
+        #    #- Method=GET #匹配任意get请求，如果需要匹配多个，则采取","分割，如：- Method=GET,POST
+        #    #- After=2222-02-03T21:20:00.000+08:00[Asia/Shanghai] # 匹配中国上海 2222.02.03 21：20：00 之后的请求
+        #    #- After=2020-01-01T21:20:00.000+08:00[Asia/Shanghai] # 匹配中国上海 2020.01.01 21：20：00 之后的请求
+        #    #- RemoteAddr=192.168.10.66/0 # 只允许指定ip访问，/0表示子网掩码
+        #    - Header=X-Request-Id, \d+  # 请求必须包含 X-Request-Id 请求头，且其值与\ d +正则表达式匹配（即，其值为一个或多个数字），则此路由匹配。
+
+        # 注册中心动态获取 ip+port的形式
+        - id: nacos-product # 微服务别名称
+          uri: lb://nacos-product # lb://服务别名  根据服务名称从注册中心获取服务ip+port信息，lb:// 表示支持负载均衡
+          predicates: # 断言
+            - Path=/product/** #path规则，匹配对应的URL请求，将匹配到的请求追加至目标URI之后

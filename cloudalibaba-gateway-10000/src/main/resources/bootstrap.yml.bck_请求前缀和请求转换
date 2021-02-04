@@ -1,0 +1,25 @@
+server:
+  port: 10000 # gateway的port
+
+spring:
+  application:
+    name: gateway-server # 应用服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册地址
+
+    gateway:
+      routes:
+        - id: nacos-product # 微服务别名称
+          uri: lb://nacos-product # lb://服务别名  根据服务名称从注册中心获取服务ip+port信息，lb:// 表示支持负载均衡
+          predicates:
+            #- Path=/product/**,/xiangjiao/**  #path规则，匹配对应的URL请求，将匹配到的请求追加至目标URI之后
+            - Path=/** # 测试请求路由配置 PrefixPath
+          filters:
+            # 由于 /xiangjiao/** 是不存在的，所以直接请求携带 /xiangjiao/** 时，会出错，此处使用过滤器将其转化为 /product/**
+            # gatewat_url/xiangjiao/product/getProduct/5 转化为 gatewat_url/product/getProduct/5
+            # ss 只是个变量，可以定义为其他的
+            #- RewritePath=/xiangjiao(?<ss>/?.*),$\{ss}
+            # 增加请求前缀
+            - PrefixPath=/product

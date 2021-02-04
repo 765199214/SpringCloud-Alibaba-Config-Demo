@@ -1,0 +1,24 @@
+server:
+  port: 10000 # gateway的port
+
+spring:
+  application:
+    name: gateway-server # 应用服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册地址
+
+    gateway:
+      routes:
+        - id: nacos-product # 微服务别名称
+          uri: lb://nacos-product # lb://服务别名  根据服务名称从注册中心获取服务ip+port信息，lb:// 表示支持负载均衡
+          predicates:
+            - Path=/api/getProduct/{xiangjiao} # 适配path路由
+          filters:
+            # 由于 - Path= 设定的请求地址为 /api/getProduct/{xiangjiao}
+            # 当匹配完成后，将 {xiangjiao} 部分参数 map保存
+            # 并且将 /api/getProduct 部分，转化为 /product/getProduct
+            # 即：gateway_uri/api/getProduct/6 转化为 gateway_uri/product/getProduct/6
+            # 注意：{xiangjiao} 只是个别名，其次{xiangjiao}为参数，并不能是 /xxx
+            - SetPath=/product/getProduct/{xiangjiao}

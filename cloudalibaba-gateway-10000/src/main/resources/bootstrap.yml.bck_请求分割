@@ -1,0 +1,26 @@
+server:
+  port: 10000 # gateway的port
+
+spring:
+  application:
+    name: gateway-server # 应用服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册地址
+
+    gateway:
+      routes:
+        - id: nacos-product # 微服务别名称
+          uri: lb://nacos-product # lb://服务别名  根据服务名称从注册中心获取服务ip+port信息，lb:// 表示支持负载均衡
+          predicates:
+            #- Path=/** # 测试请求路由配置 PrefixPath
+            - Path=/product_test/** # 测试请求路由配置 PrefixPath
+            #- Path=/**/product_test/** # 如果是这个配置，结合 - StripPrefix=2 ，请求测试以 gateway_uri/api/product_test/product/getProduct/5 为例请求
+          filters:
+            # - Path=/**时，将 /api/test/product/getProduct/4 分割指定个数，转化为 /product/getProduct/4
+
+            # - Path=/product_test/** 时，如果请求是 gateway_uri/product_test/api/product/getProduct/5
+            # 先匹配 gateway_uri/product_test，当匹配适合后，
+            # 将请求修改为  gateway_uri/product/getProduct/5，这里的2表示将 /product_test/api 删除
+            - StripPrefix=2 # 这里的数字表示分割个数，分割以 / 进行
